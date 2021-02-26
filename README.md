@@ -37,8 +37,6 @@ Para realizar las pruebas correspondientes del proyecto utilizando la herramient
 mvn test
 ```
 
-Luego de haber ejecutado el comando ```mvn test``` en un Shell o Símbolo del Sistema, debe aparecer la siguiente imagen, demostrando que las pruebas han sido realizadas exitosamente.
-
 Pruebas compiladas correctamente para el código fuente **RoundRobin**.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba1.PNG)
