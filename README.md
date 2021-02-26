@@ -44,7 +44,6 @@ Pruebas compiladas correctamente para el código fuente **RoundRobin**.
 Pruebas compiladas correctamente para el código fuente **LogService**.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba2.PNG)
-----------*Poner foto Prueba2*----------
 
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
