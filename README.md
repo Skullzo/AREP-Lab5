@@ -37,10 +37,14 @@ Para realizar las pruebas correspondientes del proyecto utilizando la herramient
 mvn test
 ```
 
-Luego de haber ejecutado el comando ```mvn test``` en un Shell o Símbolo del Sistema, debe aparecer la siguiente imagen, demostrando que las pruebas han sido realizadas exitosamente.
+Pruebas compiladas correctamente para el código fuente **RoundRobin**.
 
-![img](https://github.com/Skullzo/AREP-Lab4/blob/main/img/Pruebas.PNG)
-----------*Cambiar pruebas*----------
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba1.PNG)
+
+Pruebas compiladas correctamente para el código fuente **LogService**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba2.PNG)
+----------*Poner foto Prueba2*----------
 
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
