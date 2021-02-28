@@ -1,0 +1,10 @@
+db.createUser(
+    {
+        user:"Carlos",
+        pwd:"1234",
+        roles:[{
+            role:"readWrite",
+            db:"Arep"
+        }]
+    }
+)
