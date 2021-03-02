@@ -65,6 +65,31 @@ Luego de ejecutar el comando, tenemos el siguiente resultado en pantalla.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRoundRobin2.PNG)
 
+Ahora, para probar de manera local o localhost el programa **LogService** con sus tres respectivos logs, ejecutamos los siguientes comandos en orden.
+```
+docker build --tag arep-lab5/logservice .
+docker images
+```
+Luego de ejecutarlos en exactamente ese mismo orden, tenemos el siguiente resultado en pantalla.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerLogService1.PNG)
+
+Ahora, para correr los tres logs en puertos diferentes, se ejecutan los siguientes comandos en orden.
+```
+docker run -d -p 8001:6000 --name logservice1 arep-lab5/logservice
+docker run -d -p 8002:6000 --name logservice2 arep-lab5/logservice
+docker run -d -p 8003:6000 --name logservice3 arep-lab5/logservice
+```
+Luego de ejecutarlos en exactamente ese mismo orden, tenemos el siguiente resultado en pantalla.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerLogService1.2.3.PNG)
+
+Para comprobar que la página web ha sido desplegada con éxito, se ingresa en el navegador la siguiente URL: ```localhost:8000```. Luego de ingresar la URL en el navegador, se obtiene el siguiente resultado.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRunning.PNG)
+
+
+
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
 * [GIT](https://git-scm.com/). Sistema de control de versiones que almacena cambios sobre un archivo o un conjunto de archivos, permite recuperar versiones previas de esos archivos y permite otras cosas como el manejo de ramas (branches).
