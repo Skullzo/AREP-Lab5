@@ -88,7 +88,9 @@ Para comprobar que la página web ha sido desplegada con éxito, se ingresa en e
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRunning.PNG)
 
+Luego de ingresar tres mensajes en el espacio provisto, **Mensaje 1**, **Mensaje 2** y **Mensaje 3** respectivamente, se observa que los mensajes han sido agregados con éxito a las bases de datos en MongoDB y a la página de forma estática como se ve a continuación.
 
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRunningMessages.png)
 
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
