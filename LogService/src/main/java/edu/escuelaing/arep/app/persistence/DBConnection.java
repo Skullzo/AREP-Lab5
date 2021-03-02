@@ -20,7 +20,7 @@ public class DBConnection {
      * Metodo constructor de la clase DBConnection.
      */
     public DBConnection() {
-        uri = new MongoClientURI("mongodb+srv://Alejandro:1234@database.ymvuc.mongodb.net/test");
+        uri = new MongoClientURI("mongodb://Alejandro:1234@0.0.0.0:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=Database&authMechanism=SCRAM-SHA-1&3t.uriVersion=3");
         mongoClient = new MongoClient(uri);
     }
     /**
