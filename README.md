@@ -45,6 +45,26 @@ Pruebas compiladas correctamente para el código fuente **LogService**.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba2.1.PNG)
 
+### Localhost
+
+Para probar ahora el correcto funcionamiento del Docker de manera local o localhost del programa **RoundRobin**, primero ejecutamos los siguientes comandos en orden.
+```
+docker build --tag arep-lab5/roundrobin .
+docker images
+docker run -d -p 8000:6000 --name balanceadordecarga arep-lab5/roundrobin
+```
+Luego de ejecutarlos en exactamente ese mismo orden, tenemos el siguiente resultado en pantalla.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRoundRobin1.PNG)
+
+Ahora, se ejecuta el siguiente comando para comprobar que el Docker de **RoundRobin** se está ejecutando.
+```
+docker ps
+```
+Luego de ejecutar el comando, tenemos el siguiente resultado en pantalla.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRoundRobin2.PNG)
+
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
 * [GIT](https://git-scm.com/). Sistema de control de versiones que almacena cambios sobre un archivo o un conjunto de archivos, permite recuperar versiones previas de esos archivos y permite otras cosas como el manejo de ramas (branches).
