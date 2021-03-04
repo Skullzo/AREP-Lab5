@@ -199,23 +199,23 @@ Como se puede observar a continuación, Docker ha sido inicializado satisfactori
 
 Para agregar reglas a los puertos para poder ejecutar el contenedor desde la máquina virtual, se procede a realizar clic en el botón **Seguridad**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS18.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS18.png)
 
 Luego, en **Grupos de seguridad**, se realiza clic en el hipervínculo para poder ingresar al mismo.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS19.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS19.png)
 
 Para agregar reglas de entrada para poder tener acceso a los puertos de los contenedores, se realiza clic en el botón **Editar reglas de entrada**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS20.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS20.png)
 
 Para agregar una o varias reglas de entrada, se realiza clic en el botón de **Agregar regla**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS21.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS21.png)
 
 Luego de agregar todos los puertos de los contenedores, que son: 8000, 8001, 8002, 8003 y 27017, se realiza clic en el botón **Guardar reglas**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS22.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS22.png)
 
 Para correr el contenedor de Docker en la máquina virtual, se ejecuta el siguiente comando.
 ```
@@ -227,11 +227,11 @@ Luego de ejecutar el comando, la máquina virtual hace los respectivos pulls al 
 
 Ahora, para comprobar que el contenedor se encuentra activo desde la máquina virtual, ingresamos en el navegador la siguiente URL: http://ec2-54-167-15-7.compute-1.amazonaws.com:8000/. Como se puede observar, el contenedor ha sido desplegado satisfactoriamente desde la máquina virtual montada en AWS.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS24.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS24.png)
 
 Por último, se ingresan tres mensajes para probar el funcionamiento del programa, que son **Mensaje 1**, **Mensaje 2** y **Mensaje 3** respectivamente. Como se puede observar, el programa funciona perfectamente, agregando los tres mensajes con su respectivo número del mensaje y fecha del mensaje.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS25.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS25.png)
 
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
