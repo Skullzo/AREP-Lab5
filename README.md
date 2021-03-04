@@ -84,6 +84,10 @@ Luego de ejecutarlos en exactamente ese mismo orden, tenemos el siguiente result
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerLogService1.2.3.PNG)
 
+Ahora, para verificar que en la aplicación Docker se hayan desplegado con éxito los contenedores LogService y RoundRobin en sus respectivos puertos, se abre la aplicación de Docker de escritorio y se hace la verificación que todos los contenedores estén corriendo en sus respectivos puertos. Como se ve en la siguiente imagen, todos los contenedores están corriendo satisfactoriamente.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerSirviendo.PNG)
+
 Para comprobar que la página web ha sido desplegada con éxito, se ingresa en el navegador la siguiente URL: ```localhost:8000```. Luego de ingresar la URL en el navegador, se obtiene el siguiente resultado.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRunning.PNG)
@@ -94,7 +98,140 @@ Luego de ingresar tres mensajes en el espacio provisto, **Mensaje 1**, **Mensaje
 
 ### AWS
 
-----------*Agregar contenido*----------
+Antes de iniciar a utilizar AWS, primero se debe subir cada uno de los contenedores creados a un repositorio. Para realizar esto, primero se creó el primer repositorio en **Docker Hub** llamado ```arep-lab5```, como se ve a continuación.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS1.PNG)
+
+Luego, se ejecutaron los siguientes comandos en orden para poder subir los contenedores.
+```
+docker tag arep-lab5/roundrobin skullzo/arep-lab5
+docker push skullzo/arep-lab5:latest
+```
+Luego de ejecutar los comandos en orden, se observa que el contenedor ha sido subido satisfactoriamente al repositorio.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS2.PNG)
+
+Para comprobar que se ha subido satisfactoriamente, se accede nuevamente al repositorio creado en Docker Hub, y se verifica que el contenedor se encuentre dentro de dicho repositorio.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS3.PNG)
+
+Para iniciar a desplegar el contenedor en una máquina virtual alojada en AWS, primero se selecciona el tipo de máquina virtual que se utilizará, en este caso, se utilizará **Amazon Linux 2 AMI (HVM), SSD Volume Type**. Para utilizarla, se realiza clic en el botón **Seleccionar**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS4.PNG)
+
+Ahora se selecciona el tipo de instancia. Para esta máquina virtual, se selecciona **t2.micro**, la cual es apta para la capa gratuita. luego de seleccionarla, se realiza clic en **Revisar y lanzar**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS5.PNG)
+
+A continuación se muestra la instancia para verificar la máquina virtual que está a punto de ser lanzada. Para lanzarla, se realiza clic en el botón **Lanzar**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS6.PNG)
+
+Luego, se procede a crear un nuevo par de llaves para poder acceder a la máquina virtual desde el computador en cuestión. Para esto se selecciona la opción **Crear un nuevo par de llaves** y se escribe el nombre del par de claves, que en este caso es **AREP-Lab5KeyPair**. Para descargar la llave, se realiza clic en el botón **Descargar par de llaves**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS7.PNG)
+
+Después de descargar el par de llaves, ahora se procede a realizar clic en el botón **Lanzar instancias**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS8.PNG)
+
+Ahora, se muestra que la instancia ha sido lanzada con éxito. Para verificar que esta ha sido lanzada, se realiza clic en el botón **Ver instancias**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS9.PNG)
+
+Para conectarse a la instancia, se realiza clic en el botón **Acciones**, para posteriormente realizar clic en el botón **Conectar**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS10.PNG)
+
+Para realizar la respectiva conexión con la instancia, se realiza clic en el botón **Cliente SSH**, que es el medio en el cual se realizará la conexión con la instancia.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS11.PNG)
+
+Ahora, se ejecuta el SSH desde el computador con el cual se desea realizar la conexión con la instancia, y se ejecuta el siguiente comando.
+```
+ssh -i "AREP-Lab5KeyPair.pem" ec2-user@ec2-54-167-15-7.compute-1.amazonaws.com
+```
+Luego de ejecutar el comando, se muestra que la conexiLn con la instancia ha sido exitosa. Para comprobar que la instancia se encuentra corriendo en un entorno Linux, se ejecutan los comandos ```pwd``` y ```whoami``` para comprobarlo como se muestra a continuación.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS12.PNG)
+
+Para iniciar con el procedimiento de descarga de Docker en la máquina virtual, se ejecuta el siguiente comando.
+```
+sudo yum update -y
+```
+Luego de ejecutarlo, se comprueba que se encuentre actualizado, como se ve a continuación.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS13.PNG)
+
+Para iniciar la instalación de Docker, se ejecuta el siguiente comando.
+```
+sudo yum install docker
+```
+Luego de ejecutarlo, se inicia la descarga e instalación de Docker. Para poder iniciar con la descarga e instalación, se escribe **yes** después de haber sido ejecutado el comando.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS14.PNG)
+
+Luego de finalizar la instalación de Docker, se ejecuta el siguiente comando para configurar el respectivo usuario en el grupo de docker para no tener que ingresar “sudo” cada vez que invoca un comando.
+```
+sudo usermod -a -G docker ec2-user
+```
+Luego de ejecutado el comando, se muestra que el comando ha sido ejecutado satisfactoriamente.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS15.PNG)
+
+Para comprobar que el comando sirve, se sale y se ingresa nuevamente a la máquina virtual ejecutando los siguientes comandos en orden.
+```
+exit
+ssh -i "AREP-Lab5KeyPair.pem" ec2-user@ec2-54-167-15-7.compute-1.amazonaws.com
+```
+Luego de haber ingresado a la máquina nuevamente, se observa que se ha realizado la conexión con la máquina satisfactoriamente.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS16.PNG)
+
+Para iniciar el servicio de Docker en la máquina virtual, y para ver que Docker ya se encuentra en funcionamiento, se ejecutan los siguientes comandos en orden.
+```
+sudo service docker start
+docker images
+```
+Como se puede observar a continuación, Docker ha sido inicializado satisfactoriamente, y para comprobarlo, se ejecuta un comando docker verificando que ha sido inicializado.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS17.PNG)
+
+Para agregar reglas a los puertos para poder ejecutar el contenedor desde la máquina virtual, se procede a realizar clic en el botón **Seguridad**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS18.PNG)
+
+Luego, en **Grupos de seguridad**, se realiza clic en el hipervínculo para poder ingresar al mismo.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS19.PNG)
+
+Para agregar reglas de entrada para poder tener acceso a los puertos de los contenedores, se realiza clic en el botón **Editar reglas de entrada**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS20.PNG)
+
+Para agregar una o varias reglas de entrada, se realiza clic en el botón de **Agregar regla**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS21.PNG)
+
+Luego de agregar todos los puertos de los contenedores, que son: 8000, 8001, 8002, 8003 y 27017, se realiza clic en el botón **Guardar reglas**.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS22.PNG)
+
+Para correr el contenedor de Docker en la máquina virtual, se ejecuta el siguiente comando.
+```
+docker run -d -p 8000:6000 --name balanceadordecarga skullzo/arep-lab5
+```
+Luego de ejecutar el comando, la máquina virtual hace los respectivos pulls al repositorio de Docker ```arep-lab5```. Para comprobar que la máquina virtual ha realizado el pull de manera exitosa, se ejecuta el comando ```docker images``` para poder visualizar el contenedor.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS23.PNG)
+
+Ahora, para comprobar que el contenedor se encuentra activo desde la máquina virtual, ingresamos en el navegador la siguiente URL: http://ec2-54-167-15-7.compute-1.amazonaws.com:8000/. Como se puede observar, el contenedor ha sido desplegado satisfactoriamente desde la máquina virtual montada en AWS.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS24.PNG)
+
+Por último, se ingresan tres mensajes para probar el funcionamiento del programa, que son **Mensaje 1**, **Mensaje 2** y **Mensaje 3** respectivamente. Como se puede observar, el programa funciona perfectamente, agregando los tres mensajes con su respectivo número del mensaje y fecha del mensaje.
+
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS25.PNG)
 
 ## Construido con
 * [Maven](https://maven.apache.org/). Herramienta que se encarga de estandarizar la estructura física de los proyectos de software, maneja dependencias (librerías) automáticamente desde repositorios y administra el flujo de vida de construcción de un software.
