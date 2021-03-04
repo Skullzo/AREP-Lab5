@@ -117,35 +117,35 @@ Para comprobar que se ha subido satisfactoriamente, se accede nuevamente al repo
 
 Para iniciar a desplegar el contenedor en una máquina virtual alojada en AWS, primero se selecciona el tipo de máquina virtual que se utilizará, en este caso, se utilizará **Amazon Linux 2 AMI (HVM), SSD Volume Type**. Para utilizarla, se realiza clic en el botón **Seleccionar**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS4.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS4.png)
 
 Ahora se selecciona el tipo de instancia. Para esta máquina virtual, se selecciona **t2.micro**, la cual es apta para la capa gratuita. luego de seleccionarla, se realiza clic en **Revisar y lanzar**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS5.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS5.png)
 
 A continuación se muestra la instancia para verificar la máquina virtual que está a punto de ser lanzada. Para lanzarla, se realiza clic en el botón **Lanzar**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS6.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS6.png)
 
 Luego, se procede a crear un nuevo par de llaves para poder acceder a la máquina virtual desde el computador en cuestión. Para esto se selecciona la opción **Crear un nuevo par de llaves** y se escribe el nombre del par de claves, que en este caso es **AREP-Lab5KeyPair**. Para descargar la llave, se realiza clic en el botón **Descargar par de llaves**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS7.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS7.png)
 
 Después de descargar el par de llaves, ahora se procede a realizar clic en el botón **Lanzar instancias**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS8.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS8.png)
 
 Ahora, se muestra que la instancia ha sido lanzada con éxito. Para verificar que esta ha sido lanzada, se realiza clic en el botón **Ver instancias**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS9.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS9.png)
 
 Para conectarse a la instancia, se realiza clic en el botón **Acciones**, para posteriormente realizar clic en el botón **Conectar**.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS10.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS10.png)
 
 Para realizar la respectiva conexión con la instancia, se realiza clic en el botón **Cliente SSH**, que es el medio en el cual se realizará la conexión con la instancia.
 
-![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS11.PNG)
+![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/AWS11.png)
 
 Ahora, se ejecuta el SSH desde el computador con el cual se desea realizar la conexión con la instancia, y se ejecuta el siguiente comando.
 ```
