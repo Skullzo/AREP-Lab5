@@ -45,6 +45,8 @@ Pruebas compiladas correctamente para el código fuente **LogService**.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/Prueba2.1.PNG)
 
+----------
+
 ### Localhost
 
 Para probar ahora el correcto funcionamiento del Docker de manera local o localhost del programa **RoundRobin**, primero ejecutamos los siguientes comandos en orden.
@@ -95,6 +97,8 @@ Para comprobar que la página web ha sido desplegada con éxito, se ingresa en e
 Luego de ingresar tres mensajes en el espacio provisto, **Mensaje 1**, **Mensaje 2** y **Mensaje 3** respectivamente, se observa que los mensajes han sido agregados con éxito a las bases de datos en **MongoDB** y a la página de forma estática como se ve a continuación.
 
 ![img](https://github.com/Skullzo/AREP-Lab5/blob/main/img/DockerRunningMessages.png)
+
+----------
 
 ### AWS
 
