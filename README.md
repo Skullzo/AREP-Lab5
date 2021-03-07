@@ -252,6 +252,6 @@ Por último, se ingresan tres mensajes para probar el funcionamiento del program
 ## Autor
 [Alejandro Toro Daza](https://github.com/Skullzo)
 ## Licencia & Derechos de Autor
-**©** Alejandro Toro Daza, Estudiante de Ingeniería de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito
+**©** Alejandro Toro Daza, Estudiante de Ingeniería de Sistemas de la [Escuela Colombiana de Ingeniería Julio Garavito](https://www.escuelaing.edu.co/es/).
 
 Licencia bajo la [GNU General Public License](https://github.com/Skullzo/AREP-Lab5/blob/main/LICENSE).
