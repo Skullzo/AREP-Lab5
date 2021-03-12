@@ -6,7 +6,7 @@ services:
         image: mongo:latest
         container_name: db
         environment:
-            MONGO_INITDB_DATABASE: Arep
+            MONGO_INITDB_DATABASE: Database
             MONGO_INITDB_ROOT_USERNAME: admin
             MONGO_INITDB_ROOT_PASSWORD: admin
         volumes:
@@ -19,7 +19,7 @@ services:
 
     loadbalancer:
         build:
-            context: ./APP-LB-RoundRobin
+            context: ./RoundRobin
             dockerfile: Dockerfile
         depends_on:
             - web
